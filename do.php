@@ -34,7 +34,14 @@ switch ($car)
 
 function doMail($toNum, $sub, $message, $headers)
 	{
-		mail($toNum, $sub, $message, $headers);
+		if(mail($toNum, $sub, $message, $headers)) 
+			{
+				echo "Done!";
+			}
+		else
+			{
+				echo "Something went wrong!";
+			}
 	}
 
 doMail($num, $subject, $msg, $head);
